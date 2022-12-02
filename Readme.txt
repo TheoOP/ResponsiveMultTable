@@ -1,5 +1,5 @@
 /**********************************************************************
-# HW3MultiplicationTableJS                    
+# HW4MultiplicationTableJS                    
 **********************************************************************/
 Your name:Theo Opoku
  
@@ -12,4 +12,4 @@ I used JS learned in class and through documentation to create a dynamic and res
 HW3MultiplicationTable based on user input. Implemented Slider and tab functionality
 
 https://github.com/TheoOP/ResponsiveMultTable
-https://theoop.github.io/MultiplicationTableJS/
+https://theoop.github.io/ResponsiveMultTable/
