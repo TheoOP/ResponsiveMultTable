@@ -1,0 +1,56 @@
+<!-- Name: Theophilus Opoku 
+     Email: Theophilus_OpokuAfriyie@student.uml.edu
+     Web Design Multiplication Table
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+    <script src="/js/Part2.js"></script>
+
+</head>
+<body>  
+    <!-- Input form to prompt user  -->
+    <div id="container" class="container">
+        <div class="formHolder">
+            <div id="error"></div>
+            <form id="inputForm">
+                <label for="mincol">Minimum Column Value:</label><br>
+                <input type="text" id="mincol" name="mincol" autofocus> <br>
+                Columns: <span id="colOutput1"> </span> <img src="./images/arrow.png" id="arrow" alt=""> <span id="colOutput2"> </span><br>
+                <div id="slider1"></div>
+                <label for="maxcol">Maximum Column Value:</label><br>
+                <input type="text" id="maxcol" name="maxcol"><br><br>
+                <label for="minrow">Minimum Row Value:</label><br>
+                <input type="text" id="minrow" name="minrow"><br>
+                Rows: <span id="rowOutput1"> </span> <img src="./images/arrow.png" id="arrow" alt=""> <span id="rowOutput2"> </span><br>
+                <div id="slider2"></div>
+                <label for="maxrow">Maximum Row Value:</label><br>
+                <input type="text" id="maxrow" name="maxrow"><br>
+                <input type="submit" class="button-42" value="Save Table">
+            </form>
+        </div>
+        <div id="myTabs" class="nav nav-tabs">
+            <ul id="unorderedlistholder" style="border: 2px red">
+              <!-- <li><a href="#multTable" id="link" >Main</a></li>
+              <li><a href="#multTablex">Mainsa</a></li>   -->
+            </ul>
+            <div class="tableHolder" id="tableHolder">
+                <table class="multTable" id="multTable" >
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- <script src="/js/script.js"></script> -->
+</body>
+</html>
