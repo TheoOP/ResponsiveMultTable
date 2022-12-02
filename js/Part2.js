@@ -129,6 +129,7 @@ $(document).ready(function(){
 
 
 
+
     $("#inputForm").on ('change submit', function(e){
         e.preventDefault();
 
@@ -204,39 +205,43 @@ $(document).ready(function(){
         rowOut2.html(slider2nd.slider('values',1));
         $("#minrow").val(slider2nd.slider('values',0));
         $("#maxrow").val(slider2nd.slider('values',1));
-        buildTable();
+        if($("#inputForm").valid()){
+            buildTable();
+        };
 
 
     });
 
 
     var numTables = 0;
-    $("#inputForm").on ('submit', function(e){          //process to save tables when submit is clicked
-        var $div = $('table[id^="multTable"]:first');       
-        var $clone = $div.clone().prop('id', 'multTable'+numTables );
-        $div.after($clone);
-        
-        
-        // $('div.tableHolder').append('<table id= "multTable'+ numTables+'"' + tableHolder.innerHTML + '</li>');
-        buildTable();
-        // var $tab = $('ul[id^="link"]:first');
-        // var $tabClone = $tab.clone().prop('id', 'link'+numTables );
-        // $tab.after($tabClone);
+    $("#inputForm").on ('submit', function(e){ 
+                 //process to save tables when submit is clicked
+        if($("#inputForm").valid()){         
+            var $div = $('table[id^="multTable"]:first');       
+            var $clone = $div.clone().prop('id', 'multTable'+numTables );
+            $div.after($clone);
+            
+            
+            // $('div.tableHolder').append('<table id= "multTable'+ numTables+'"' + tableHolder.innerHTML + '</li>');
+            buildTable();
+            // var $tab = $('ul[id^="link"]:first');
+            // var $tabClone = $tab.clone().prop('id', 'link'+numTables );
+            // $tab.after($tabClone);
 
 
-        if(numTables == 0){//process to add tab links to tables
-            ulHolder.append('<li>' +'<a href="#multTable"> Current' + '</li>');        //append to tab list for first case
-            ulHolder.append('<li>' +'<a href="#multTable0">' + ' Col('+ document.getElementById('mincol').value+' -> '+document.getElementById('maxcol').value +') x ' + 'Row(' + document.getElementById('minrow').value+' -> '+document.getElementById('maxrow').value + ')</li>');
-        }else{
-            ulHolder.append('<li>' +'<a href="#multTable'+ numTables+ '"> Col('+ document.getElementById('mincol').value+' -> '+document.getElementById('maxcol').value +') x ' + 'Row(' + document.getElementById('minrow').value+' -> '+document.getElementById('maxrow').value + ')</li>'); //append for remaining cases
-        }
-        numTables++;    //keep track of number of tables being created
-        // $("#myTabs").tabs("load", "#multtable" + numTables);
-    });
-    $("#myTabs").tabs();
+            if(numTables == 0){//process to add tab links to tables
+                ulHolder.append('<li>' +'<a href="#multTable"> Current' + '</li>');        //append to tab list for first case
+                ulHolder.append('<li>' +'<a href="#multTable0">' + ' Col('+ document.getElementById('mincol').value+' -> '+document.getElementById('maxcol').value +') x ' + 'Row(' + document.getElementById('minrow').value+' -> '+document.getElementById('maxrow').value + ')</li>');
+            }else{
+                ulHolder.append('<li>' +'<a href="#multTable'+ numTables+ '"> Col('+ document.getElementById('mincol').value+' -> '+document.getElementById('maxcol').value +') x ' + 'Row(' + document.getElementById('minrow').value+' -> '+document.getElementById('maxrow').value + ')</li>'); //append for remaining cases
+            }
+            numTables++;    //keep track of number of tables being created
+        }    // $("#myTabs").tabs("load", "#multtable" + numTables);
+        });
+        $("#myTabs").tabs();
 
 
 
-
+    
 
 });
